@@ -1,12 +1,98 @@
 <!DOCTYPE html>
 
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/index.css">
+
 <html>
     <head>
         <title>Gray's Corner</title>
     </head>
 
     <body>
-        <h1>mrrp mrrp meow :3c</h1>
-        <p>Hey there! This website is current a work in progress but should eventually host </p>
+        <!-- COPY OVER -->
+        <div class="main-header">
+            <p>
+                <b><a class="header" href="/index.html">Gray's Corner</a></b>
+            </p>
+        </div>
+        
+        <div class="content">
+            <div class="gray-box" id="gray_box">
+                <div class="gray-box-header" id="gray_boxheader"></div>
+                <img src="assets/misc/temp_gray_pic.png" id="gray_pic">
+                <p>meow</p>
+            </div>
+            <div class="main-box" style="width: 70%; float: right;">
+                <h1 style="letter-spacing: 4px;">Gray's Corner</h1>
+                <hr>
+                <p>Hey there! Welcome to my little corner of the internet. I hope you enjoy your stay.</p>
+                <p>As you might've been able to discern from the website's title, I'm Gray. Another one of those weird furry things. I dabble in quite a few fields, such as various forms of artwork, music, and coding. I'm still a bit new to the whole "making a website" thing, with my only real experience so far being a project with a few friends, so please forgive me if anything doesn't work properly.</p>
+            </div>
+
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div class="buffer">
+                <p>mrrp mrrp meow</p>
+            </div>
+        </div>
     </body>
 </html>
+
+<script>
+    // Make the DIV element draggable:
+    dragElement(document.getElementById("gray_box"));
+
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(elmnt.id + "header")) {
+            // if present, the header is where you move the DIV from:
+            document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        } else {
+            // otherwise, move the DIV from anywhere inside the DIV:
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            if (elmnt.style.transform != ('rotate(' + (-0.5*pos1) + 'deg)') && Math.abs(pos1) >= 1) {
+                elmnt.style.transform = ('rotate(' + (-0.5*pos1) + 'deg)');
+            }
+            if (Math.abs(pos1) <= 1) {
+                elmnt.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function closeDragElement() {
+            // stop moving when mouse button is released:
+            canDrag = false;
+            document.onmouseup = null;
+            document.onmousemove = null;
+            elmnt.style.top = '75px';
+            elmnt.style.left = '8px';
+            elmnt.style.transform = 'rotate(0deg)'
+            elmnt.style.transition = "transform 0.15s cubic-bezier(.02,.19,.4,.99), left 0.2s cubic-bezier(.43,1.28,.67,.98), top 0.2s cubic-bezier(.43,1.28,.67,.98)";
+            setTimeout(function() {
+                elmnt.style.transition = "";
+            }, 200)
+        }
+    }
+</script>

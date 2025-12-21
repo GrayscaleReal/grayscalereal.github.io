@@ -1,0 +1,62 @@
+.gray-box {
+    width: 23%;
+    overflow: hidden;
+    float: left;
+    display: block;
+    position: absolute;
+
+    background-color: rgba(145, 145, 145, 0.1);
+    background-attachment: fixed;
+    padding: 1%;
+    border-radius: 25px;
+    backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(199, 199, 199, 0.5);
+    border-top: none;
+    border-right: none;
+
+    transform: none;
+    transition: transform 0.15s cubic-bezier(.02,.19,.4,.99);
+}
+
+.gray-box img {
+    border: 1.5px solid rgba(199, 199, 199, 0.5);
+    border-radius: 25px;
+    border-top: none;
+    border-right: none;
+    width: 100%;
+}
+
+.gray-box-header {
+    width: 95%;
+    height: 20px;
+    background-color: rgba(199, 199, 199, 0.15);
+    backdrop-filter: blur(8px);
+
+    border: 1.5px solid rgba(199, 199, 199, 0.5);
+    border-radius: 25px;
+    border-top: none;
+    border-right: none;
+
+    padding: 2px;
+
+    margin: 0px auto;
+    margin-bottom: 15px;
+    cursor: grab;
+}
+
+.gray-box-header:active {
+    cursor: grabbing;
+}
+
+.gray-box p {
+    text-align: center;
+}
+
+.buffer {
+    position: relative;
+    left: 0;
+    background-color: #393939;
+    min-height: 150px;
+    width: 103%;
+    padding: 8px;
+}
