@@ -54,9 +54,11 @@ function dragElement(elmnt) {
             total_clicks = 0;
             clicky_counter.textContent = total_clicks;
             gray_pic.style.filter = 'contrast(100%)'
-            unspooky_sound.currentTime = 0;
-            unspooky_sound.volume = clicky_volume;
-            unspooky_sound.play();
+            if (total_clicks >= 100) {
+                unspooky_sound.currentTime = 0;
+                unspooky_sound.volume = clicky_volume;
+                unspooky_sound.play();
+            }
         }
     }
 
@@ -103,7 +105,9 @@ document.getElementById("reset_counter").addEventListener("click", function() {
     total_clicks = 0;
     clicky_counter.textContent = total_clicks;
     gray_pic.style.filter = 'contrast(100%)'
-    unspooky_sound.currentTime = 0;
-    unspooky_sound.volume = clicky_volume;
-    unspooky_sound.play();
+    if (total_clicks >= 100) {
+        unspooky_sound.currentTime = 0;
+        unspooky_sound.volume = clicky_volume;
+        unspooky_sound.play();
+    }
 })
