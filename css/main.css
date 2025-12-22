@@ -25,11 +25,14 @@ body {background-image: url("../assets/misc/background_tile.png"); background-co
     border: 1.5px solid rgba(199, 199, 199, 0.5);
     border-top: none;
     border-right: none;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
 
     width: 97%;
 }
 
-.main-box hr {
+hr {
     backdrop-filter: blur(8px);
     border-color: rgba(199, 199, 199, 0.25);
 }

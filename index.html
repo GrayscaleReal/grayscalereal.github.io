@@ -17,82 +17,51 @@
         </div>
         
         <div class="content">
+            <img src="assets/misc/ib_dance.gif" class="ib-dance">
+            
+            <!-- ID CARD -->
             <div class="gray-box" id="gray_box">
                 <div class="gray-box-header" id="gray_boxheader"></div>
-                <img src="assets/misc/temp_gray_pic.png" id="gray_pic">
-                <p>meow</p>
+                <img src="assets/misc/gray_id.png" id="gray_pic">
+                <p class="click-counter">This creature has been clicked <b id="clicky_counter">0</b> times. <br> Shake the ID or click <span id="reset_counter" style="text-decoration: underline; cursor: pointer;">this text</span> to reset it.</p>
+                <div class="slider-container">
+                    <input type="range" min="0" max="1000" value="500" class="slider" id="volume_range">
+                </div>
+                <p class="click-counter" style="padding-top: 5px;">Use the slider above to adjust the volume of this creature's noises. <br> Shaking the ID too far will cause the volume to slide.</p>
+                <hr>
+                <h1 style="margin-top:5px;">Gray</h1>
+                <p class="subtitle">They/Them</p>
+                <hr>
             </div>
-            <div class="main-box" style="width: 70%; float: right;">
-                <h1 style="letter-spacing: 4px;">Gray's Corner</h1>
+
+            <div class="main-box" style="width: 70%; margin-left: auto; margin-right: -10px;">
+                <h1>Gray's Corner</h1>
                 <hr>
                 <p>Hey there! Welcome to my little corner of the internet. I hope you enjoy your stay.</p>
                 <p>As you might've been able to discern from the website's title, I'm Gray. Another one of those weird furry things. I dabble in quite a few fields, such as various forms of artwork, music, and coding. I'm still a bit new to the whole "making a website" thing, with my only real experience so far being a project with a few friends, so please forgive me if anything doesn't work properly.</p>
             </div>
-
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <div class="buffer">
-                <p>mrrp mrrp meow</p>
+            <div class="main-box" style="width: 70%; margin-left: auto; margin-right: -10px;">
+                <h1>mrrp mrrp meow :3c</h1>
+                <hr>
+                <p>I kinda just need this section to be a biiiit bigger apologies.</p>
+                <p>I wanna see if I can get a neat lil parallax effect goin on that'd be kinda neat.</p>
+            </div>
+            <div class="main-box" style="width: 70%; margin-left: auto; margin-right: -10px;">
+                <h1>third box :[</h1>
+                <hr>
+                <p>oughhhhhhhhhhhhhhhhhhhhhhhhhh grahhhhhhhhhhhhhh</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+            </div>
+            <div class="buffer"></div>
+            <div class="cool-container" style="background-image:url('assets/misc/temp_gray_pic.png');min-height:1900px;">
             </div>
         </div>
     </body>
 </html>
 
-<script>
-    // Make the DIV element draggable:
-    dragElement(document.getElementById("gray_box"));
+<audio id="gray_noises" src="assets/misc/click-sounds/gray_dialogue.mp3" preload="auto"></audio>
+<audio id="spooky_scary" src="assets/misc/click-sounds/100_clicks.mp3" preload="auto"></audio>
+<audio id="scary_spooky" src="assets/misc/click-sounds/unspookify.mp3" preload="auto"></audio>
 
-    function dragElement(elmnt) {
-        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-        if (document.getElementById(elmnt.id + "header")) {
-            // if present, the header is where you move the DIV from:
-            document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-        } else {
-            // otherwise, move the DIV from anywhere inside the DIV:
-            elmnt.onmousedown = dragMouseDown;
-        }
-
-        function dragMouseDown(e) {
-            e = e || window.event;
-            e.preventDefault();
-            // get the mouse cursor position at startup:
-            pos3 = e.clientX;
-            pos4 = e.clientY;
-            document.onmouseup = closeDragElement;
-            // call a function whenever the cursor moves:
-            document.onmousemove = elementDrag;
-        }
-
-        function elementDrag(e) {
-            e = e || window.event;
-            e.preventDefault();
-            // calculate the new cursor position:
-            pos1 = pos3 - e.clientX;
-            pos2 = pos4 - e.clientY;
-            pos3 = e.clientX;
-            pos4 = e.clientY;
-            // set the element's new position:
-            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-            if (elmnt.style.transform != ('rotate(' + (-0.5*pos1) + 'deg)') && Math.abs(pos1) >= 1) {
-                elmnt.style.transform = ('rotate(' + (-0.5*pos1) + 'deg)');
-            }
-            if (Math.abs(pos1) <= 1) {
-                elmnt.style.transform = 'rotate(0deg)';
-            }
-        }
-
-        function closeDragElement() {
-            // stop moving when mouse button is released:
-            canDrag = false;
-            document.onmouseup = null;
-            document.onmousemove = null;
-            elmnt.style.top = '75px';
-            elmnt.style.left = '8px';
-            elmnt.style.transform = 'rotate(0deg)'
-            elmnt.style.transition = "transform 0.15s cubic-bezier(.02,.19,.4,.99), left 0.2s cubic-bezier(.43,1.28,.67,.98), top 0.2s cubic-bezier(.43,1.28,.67,.98)";
-            setTimeout(function() {
-                elmnt.style.transition = "";
-            }, 200)
-        }
-    }
-</script>
+<script src="js/index.js"></script>

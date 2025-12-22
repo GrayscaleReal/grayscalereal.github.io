@@ -16,6 +16,8 @@
 
     transform: none;
     transition: transform 0.15s cubic-bezier(.02,.19,.4,.99);
+
+    z-index: 9;
 }
 
 .gray-box img {
@@ -24,10 +26,20 @@
     border-top: none;
     border-right: none;
     width: 100%;
+
+    transition: transform 0.15s ease-in-out, filter 8s ease-in;
+}
+.gray-box img:hover {
+    transform: scale(1.025);
+    cursor: pointer;
+}
+
+.gray-box img:active {
+    transform: scale(0.985);
 }
 
 .gray-box-header {
-    width: 95%;
+    width: 100%;
     height: 20px;
     background-color: rgba(199, 199, 199, 0.15);
     backdrop-filter: blur(8px);
@@ -48,15 +60,101 @@
     cursor: grabbing;
 }
 
-.gray-box p {
+.gray-box {
     text-align: center;
 }
 
 .buffer {
     position: relative;
-    left: 0;
+    left: -10px;
+    background-image: url('../assets/misc/background_tile.png');
+    filter: brightness(800%);
     background-color: #393939;
-    min-height: 150px;
+    min-height: 176px;
     width: 103%;
-    padding: 8px;
+}
+
+.subtitle {
+    font-size: 12px;
+    opacity: 0.5;
+    margin-top: -15px;
+}
+
+.cool-container {
+    position: relative;
+    left: -10px;
+    background-color: #212121;
+    background-attachment: fixed;
+    width: 103%;
+}
+
+.main-box h1 {
+    letter-spacing: 2px;
+}
+
+.ib-dance {
+    position: fixed;
+    bottom: -25px;
+    left: -25px;
+    width: 15%;
+    z-index: 2;
+
+    filter: drop-shadow(0px 0px 15px #fff);
+    pointer-events: none;
+}
+
+.click-counter {
+    font-style: oblique;
+    margin-top: 5px;
+    font-size: 12px;
+    color: rgb(154, 154, 154);
+}
+
+.click-counter b {
+    color: rgb(220, 220, 220);
+}
+
+/* Slider Stuffs */
+.slider-container {
+    width: 95%;
+    margin: 0px auto;
+}
+
+.slider {
+    appearance: none;
+    width: 90%;
+    height: 10px;
+    background-color: rgba(100, 100, 100, 0.1);
+    backdrop-filter: blur(8px);
+    
+    border: 1.5px solid rgba(199, 199, 199, 0.5);
+    opacity: 0.75;
+    border-style: inset;
+    border-radius: 15px;
+
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    background-image: url("../assets/misc/tiny_yipper.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 48px;
+
+    transition: transform .2s ease-in-out;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    cursor: grab;
+    transform: scale(1.05);
+}
+.slider::-webkit-slider-thumb:active {
+    cursor: grabbing;
 }
