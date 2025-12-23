@@ -1,12 +1,17 @@
+// i forgot where i got most of the box dragging code but aside from the dragging itself everything else was done by me :3c
+// "everything else" being the rotation, position resetting, clicker stuff, etc
+
 const gray_box = document.getElementById("gray_pic");
 const gray_sound = document.getElementById("gray_noises");
-const spooky_sound = document.getElementById("spooky_scary");
-const unspooky_sound = document.getElementById("scary_spooky");
 const volume_slider = document.getElementById("volume_range")
 
 var clicky_counter = document.getElementById("clicky_counter");
 var total_clicks = 0;
 var clicky_volume = (volume_slider.value / 1000);
+
+var randRotate = Math.floor(Math.random()*2.5) + 1;
+randRotate *= Math.round(Math.random()) ? 1 : -1;
+gray_box.style.setProperty('--rotation', (randRotate + "deg"))
 
 volume_slider.oninput = function() {
     clicky_volume = (this.value / 1000);
@@ -53,12 +58,6 @@ function dragElement(elmnt) {
         if (Math.abs(pos1) >= 175) {
             total_clicks = 0;
             clicky_counter.textContent = total_clicks;
-            gray_pic.style.filter = 'contrast(100%)'
-            if (total_clicks >= 100) {
-                unspooky_sound.currentTime = 0;
-                unspooky_sound.volume = clicky_volume;
-                unspooky_sound.play();
-            }
         }
     }
 
@@ -85,6 +84,8 @@ function thingy() {
 thingy()
 
 gray_box.addEventListener("click", function() {
+    var randRotate = Math.floor(Math.random()*2.5) + 1;
+    randRotate *= Math.round(Math.random()) ? 1 : -1;
     clearTimeout(pauseAudio);
     thingy()
     total_clicks += 1;
@@ -92,22 +93,10 @@ gray_box.addEventListener("click", function() {
     gray_sound.currentTime = Math.floor(Math.random() * 19);
     gray_sound.volume = clicky_volume;
     gray_sound.play();
-
-    if (total_clicks == 100) {
-        gray_pic.style.filter = 'contrast(200%)';
-        spooky_sound.currentTime = 0;
-        spooky_sound.volume = clicky_volume;
-        spooky_sound.play();
-    }
+    gray_box.style.setProperty('--rotation', (randRotate + "deg"))
 })
 
 document.getElementById("reset_counter").addEventListener("click", function() {
     total_clicks = 0;
     clicky_counter.textContent = total_clicks;
-    gray_pic.style.filter = 'contrast(100%)'
-    if (total_clicks >= 100) {
-        unspooky_sound.currentTime = 0;
-        unspooky_sound.volume = clicky_volume;
-        unspooky_sound.play();
-    }
 })

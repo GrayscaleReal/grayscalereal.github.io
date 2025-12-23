@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Open Dyslexic';
+    src: url(../assets/fonts/OpenDyslexic-Regular.otf);
+}
+
 .main-header {
     font-size: 18px;
     width: 100%;
@@ -13,7 +18,7 @@
     background-image: linear-gradient(to bottom, rgba(24, 24, 24, 100%) 25%, rgba(145, 145, 145, 0.1) 100%);
 }
 .main-header p {padding-left: 0.5%;}
-.content {margin-top: 75px;}
+.content {margin-top: 75px; margin-right: 10px;}
 body {background-image: url("../assets/misc/background_tile.png"); background-color: #212121; background-attachment: fixed; overflow-x: hidden;}
 
 .main-box {
@@ -32,20 +37,20 @@ body {background-image: url("../assets/misc/background_tile.png"); background-co
     width: 97%;
 }
 
-hr {
-    backdrop-filter: blur(8px);
-    border-color: rgba(199, 199, 199, 0.25);
-}
+hr {backdrop-filter: blur(8px); border-color: rgba(199, 199, 199, 0.25);}
 
-p {
+p, ul {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: whitesmoke;
-    filter: none;
+    letter-spacing: 0.5px;
 }
+
+li {margin-bottom: 15px;}
 
 h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: whitesmoke;
+    font-size: 24px;
 }
 
 a:visited {color: rgb(131, 131, 131);}
@@ -54,3 +59,10 @@ a:link {color: rgb(173, 173, 173);}
 a:hover {color:white;}
 a.header {text-decoration: none; color: whitesmoke;}
 a.header:hover {text-decoration: underline;}
+
+.custom-emoji {
+    position: relative;
+    top: 2px;
+    height: 1rem;
+    display: inline-block;
+}

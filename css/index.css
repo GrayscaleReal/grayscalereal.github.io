@@ -1,3 +1,65 @@
+.subtitle {font-size: 12px; opacity: 0.5;}
+.main-box h1 {letter-spacing: 2px;}
+.pride-flag {display: inline-block; border-radius: 2.5px;}
+.redacted {letter-spacing: -1px;}
+
+.buffer {
+    position: relative;
+    left: -10px;
+    background-image: url('../assets/misc/background_tile.png');
+    filter: brightness(800%);
+    background-color: #393939;
+    min-height: 176px;
+    width: 103%;
+}
+
+.cool-container {
+    position: relative;
+    left: -10px;
+    background-color: #212121;
+    background-attachment: fixed;
+    width: 103%;
+}
+
+.ib-dance {
+    position: fixed;
+    bottom: -25px;
+    left: -25px;
+    width: 15%;
+    z-index: 2;
+
+    filter: drop-shadow(0px 0px 15px #fff);
+    pointer-events: none;
+}
+
+summary:hover {background-color: rgba(255, 255, 255, 0.25);}
+details > summary {list-style-type: '▷ ';}
+details[open] > summary {list-style-type: '▽ ';}
+
+summary {
+    color: whitesmoke;
+    padding: 2.5px;
+    margin: 0px auto;
+    margin-top: 5px;
+
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+
+    border: 1.5px solid rgba(199, 199, 199, 0.5);
+    border-radius: 25px;
+    border-top: none;
+    border-right: none;
+
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+}
+
+/* GRAY BOX CODE */
+.gray-box-header:active {cursor: grabbing;}
+.gray-box {text-align: center;}
+.gray-box img:hover {transform: scale(1.025); cursor: pointer;}
+.gray-box p, .gray-box span, .gray-box summary, .gray-box h1 {font-family: 'Open Dyslexic', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+
 .gray-box {
     width: 23%;
     overflow: hidden;
@@ -25,17 +87,16 @@
     border-radius: 25px;
     border-top: none;
     border-right: none;
+
     width: 100%;
 
-    transition: transform 0.15s ease-in-out, filter 8s ease-in;
-}
-.gray-box img:hover {
-    transform: scale(1.025);
-    cursor: pointer;
+    transition: filter 0.05s cubic-bezier(.02,.19,.4,.99), transform 0.15s cubic-bezier(.02,.19,.4,.99);
 }
 
 .gray-box img:active {
-    transform: scale(0.985);
+    --rotation: 0deg;
+    transform: scale(0.985) rotate(var(--rotation));
+    filter: saturate(150%) contrast(105%) drop-shadow(-5px 0px 2.5px #ff00a280) drop-shadow(5px 0px 2.5px #00bfff80);
 }
 
 .gray-box-header {
@@ -56,53 +117,29 @@
     cursor: grab;
 }
 
-.gray-box-header:active {
-    cursor: grabbing;
-}
+.id-left {margin-left: -10px; margin-right: auto;}
+.id-right {margin-right: -10px; margin-left: auto;}
+.id-left:hover, .id-right:hover {transform: scale(1.025); background-color: rgba(255, 255, 255, 0.25);}
+.id-left span, .id-right span {color: whitesmoke; filter: none;}
 
-.gray-box {
+.id-right, .id-left {
+    width: 45%;
+    display: inline-block;
     text-align: center;
+    margin-bottom: 5px;
+
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+
+    border: 1.5px solid rgba(199, 199, 199, 0.5);
+    border-radius: 25px;
+    border-top: none;
+    border-right: none;
+
+    transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out;
 }
 
-.buffer {
-    position: relative;
-    left: -10px;
-    background-image: url('../assets/misc/background_tile.png');
-    filter: brightness(800%);
-    background-color: #393939;
-    min-height: 176px;
-    width: 103%;
-}
-
-.subtitle {
-    font-size: 12px;
-    opacity: 0.5;
-    margin-top: -15px;
-}
-
-.cool-container {
-    position: relative;
-    left: -10px;
-    background-color: #212121;
-    background-attachment: fixed;
-    width: 103%;
-}
-
-.main-box h1 {
-    letter-spacing: 2px;
-}
-
-.ib-dance {
-    position: fixed;
-    bottom: -25px;
-    left: -25px;
-    width: 15%;
-    z-index: 2;
-
-    filter: drop-shadow(0px 0px 15px #fff);
-    pointer-events: none;
-}
-
+.click-counter b {color: rgb(220, 220, 220);}
 .click-counter {
     font-style: oblique;
     margin-top: 5px;
@@ -110,11 +147,22 @@
     color: rgb(154, 154, 154);
 }
 
-.click-counter b {
-    color: rgb(220, 220, 220);
+.slider:hover {opacity: 1;}
+.slider::-webkit-slider-thumb:hover {cursor: grab; transform: scale(1.05);}
+.slider::-webkit-slider-thumb:active {cursor: grabbing;}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    background-image: url("../assets/misc/tiny_yipper.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 48px;
+
+    transition: transform .2s ease-in-out;
 }
 
-/* Slider Stuffs */
 .slider-container {
     width: 95%;
     margin: 0px auto;
@@ -135,26 +183,78 @@
     transition: opacity .2s;
 }
 
-.slider:hover {
-    opacity: 1;
+.gooby {
+    margin-left: auto;
+    margin-right: -10px;
+    display: block;
+    width: 72%;
+    text-align: center;
+    font-weight: lighter;
+    font-family: monospace;
+
+    background-color: rgba(188, 188, 188, 0.25);
+    background-attachment: fixed;
+    padding: 1%;
+    border-radius: 25px;
+    backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(199, 199, 199, 0.5);
+    border-top: none;
+    border-right: none;
 }
 
-.slider::-webkit-slider-thumb {
-    appearance: none;
-    background-image: url("../assets/misc/tiny_yipper.png");
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 48px;
-    height: 48px;
+.gooby h1 {animation: gooby-bounce 3.6s cubic-bezier(0.175, 0.885, 0.320, 1.275) infinite both;}
 
-    transition: transform .2s ease-in-out;
+@keyframes gooby-bounce {
+    0% {transform: scale3d(1, 1, 1);}
+    7.5% {
+        transform: scale3d(1.05, 0.95, 1);
+        opacity: 0.5;
+        letter-spacing: 1px;
+    }
+    10% {
+        transform: scale3d(0.95, 1.05, 1);
+        opacity: 1;
+        letter-spacing: 0px;
+    }
+    12.5% {transform: scale3d(1.025, 0.95, 1);}
+    16.25% {transform: scale3d(0.975, 1.025, 1);}
+    13.75% {transform: scale3d(1.025, 0.975, 1);}
+    25% {transform: scale3d(1, 1, 1);}
+    100% {transform: scale3d(1, 1, 1);}
 }
 
-.slider::-webkit-slider-thumb:hover {
-    cursor: grab;
-    transform: scale(1.05);
+#confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
 }
-.slider::-webkit-slider-thumb:active {
-    cursor: grabbing;
+
+.block-left, .block-right {width: 47%; contain: layout;}
+.block-left {float: left;}
+.block-right {float: right;}
+.block-center {width: 100%; contain: layout;}
+.block-right details summary {background-color: rgb(105, 105, 105);}
+
+.block-right details[open] > summary {
+    border-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.dislikes-rant {
+    padding: 10px;
+    margin-top: 0px;
+
+    background-color: rgba(130, 130, 130, 0.15);
+    backdrop-filter: blur(8px);
+
+    border: 1.5px solid rgba(199, 199, 199, 0.5);
+    border-radius: 15px;
+    border-top: none;
+    border-right: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 }

@@ -6,6 +6,8 @@
 <html>
     <head>
         <title>Gray's Corner</title>
+        <meta charset="utf-8">
+        <script src="https://kit.fontawesome.com/bafa356f54.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -15,6 +17,8 @@
                 <b><a class="header" href="/index.html">Gray's Corner</a></b>
             </p>
         </div>
+        <!-- meow -->
+        <canvas id="confetti"></canvas>
         
         <div class="content">
             <img src="assets/misc/ib_dance.gif" class="ib-dance">
@@ -22,36 +26,109 @@
             <!-- ID CARD -->
             <div class="gray-box" id="gray_box">
                 <div class="gray-box-header" id="gray_boxheader"></div>
+                <hr>
                 <img src="assets/misc/gray_id.png" id="gray_pic">
-                <p class="click-counter">This creature has been clicked <b id="clicky_counter">0</b> times. <br> Shake the ID or click <span id="reset_counter" style="text-decoration: underline; cursor: pointer;">this text</span> to reset it.</p>
-                <div class="slider-container">
-                    <input type="range" min="0" max="1000" value="500" class="slider" id="volume_range">
-                </div>
-                <p class="click-counter" style="padding-top: 5px;">Use the slider above to adjust the volume of this creature's noises. <br> Shaking the ID too far will cause the volume to slide.</p>
+                <details>
+                    <summary>Clicker Information</summary>
+                    <p class="click-counter">This creature has been clicked <b id="clicky_counter">0</b> times. <br> Shake the ID or click <span id="reset_counter" style="text-decoration: underline; cursor: pointer;">this text</span> to reset it.</p>
+                    <div class="slider-container">
+                        <input type="range" min="0" max="1000" value="500" class="slider" id="volume_range">
+                    </div>
+                    <p class="click-counter" style="padding-top: 5px;">Use the slider above to adjust Gray's volume. <br> <span style="font-size:9px;">Shaking the ID too much will cause the volume to slide.</span></p>
+                </details>
                 <hr>
                 <h1 style="margin-top:5px;">Gray</h1>
-                <p class="subtitle">They/Them</p>
+                <p class="subtitle" style="margin-top: -15px;">They/Them</p>
+                <div class="id-left">
+                    <p>
+                        <div class="pride-flag" style="background-image:linear-gradient(#3ca542,#3ca542 20%,#a8d377 20%,#a8d377 40%,#fff 40%,#fff 60%,#a9a9a9 60%,#a9a9a9 80%,#000 80%);line-height:20px;width:26px;margin-right:5px;">&nbsp;</div>
+                        <span>Aroace</span>
+                        <div class="pride-flag" style="background-image:linear-gradient(#000,#000 25%,#7f7f7f 25%,#7f7f7f 50%,#fff 50%,#fff 75%,#670066 75%);line-height:20px;width:26px;margin-left:5px;">&nbsp;</div>
+                    </p>
+                </div>
+                <div class="id-right">
+                    <p>
+                        <div class="pride-flag" style="background-image:linear-gradient(#fff42c,#fff42c 25%,#fff 25%,#fff 50%,#9d59d2 50%,#9d59d2 75%,#000 75%);line-height:20px;width:26px;">&nbsp;</div>
+                        <span>Nonbinary</span>
+                        <div class="pride-flag" style="background-image:linear-gradient(#fff42c,#fff42c 25%,#fff 25%,#fff 50%,#9d59d2 50%,#9d59d2 75%,#000 75%);line-height:20px;width:26px;">&nbsp;</div>
+                    </p>
+                </div>
+                <div class="id-left" id="birthday">
+                    <p>
+                        <span id="age">XX</span> years old
+                    </p>
+                </div>
+                <div class="id-right"><p>Block 4</p></div>
+                <div class="id-left"><p>Block 5</p></div>
+                <div class="id-right"><p>Block 6</p></div>
+                <hr style="margin-top: 25px;">
+                <a href="https://bsky.app/profile/grayscalereal.bsky.social"><i class="fa-brands fa-bluesky"></i></a>
                 <hr>
+                <p class="subtitle">Pride flag code by <a href="https://toyhou.se/VynxCodes">VynxCodes</a> on Toyhouse.</p>
             </div>
 
-            <div class="main-box" style="width: 70%; margin-left: auto; margin-right: -10px;">
+            <div class="gooby"><h1>hey so like this website really doesnt work all that well on mobile sorgy :3</h1></div>
+            <div class="main-box" style="width: 72%; margin-left: auto; margin-right: -10px;">
                 <h1>Gray's Corner</h1>
                 <hr>
                 <p>Hey there! Welcome to my little corner of the internet. I hope you enjoy your stay.</p>
                 <p>As you might've been able to discern from the website's title, I'm Gray. Another one of those weird furry things. I dabble in quite a few fields, such as various forms of artwork, music, and coding. I'm still a bit new to the whole "making a website" thing, with my only real experience so far being a project with a few friends, so please forgive me if anything doesn't work properly.</p>
             </div>
-            <div class="main-box" style="width: 70%; margin-left: auto; margin-right: -10px;">
-                <h1>mrrp mrrp meow :3c</h1>
+            <div class="main-box" style="width: 72%; margin-left: auto; margin-right: -10px;">
+                <h1>About Me</h1>
                 <hr>
-                <p>I kinda just need this section to be a biiiit bigger apologies.</p>
-                <p>I wanna see if I can get a neat lil parallax effect goin on that'd be kinda neat.</p>
+                <p>Expanding on some of the points made in the first box, I dabble in quite a few fields relating to the creation of various forms of art. I mostly work with creating 2D art, as it's the field I have the most experience (and actual motivation) with. Definitely not all that great at it, but we make do. I also do a bit of work in 3D rendering, though I'm working towards figuring out how to make my own (slightly higher-poly) models. I've got a bit of experience when it comes to making models in Blockbench however.</p>
+                <p>MUSIC. I love composing silly little songs when I have the motivation to do so (being once in a blue moon) and personally think I do best at like, some kinda dark spooky music and stuff. I've no idea how properly to describe the genre but I've got a few examples in my portfolio, such as "BLACK TIDE (SHIFTED MIX)", "LURE", and a few others.</p>
+                <br>
+                <p>I've got a bit of experience with a few kinds of programming. I've been working with HTML/CSS for since like... 2018-ish? I forget exactly when I started but I was really young when I began dabbling in web development. Nothing to the extent of a full-fledged good-looking website, that wouldn't be until November of '25 with a wiki for a Roblox game being worked on with a few friends (though "good-looking" may be a bit of a stretch, it's pretty barebones), and late December of the same year for this site.</p>
+                <p>I've got a bit more experience with Lua, though that's mostly been confined to making Friday Night Funkin' mods (specifically using Psych Engine v0.6.3), however I'm starting to expand into working with Haxe as well for FNF-related projects. Currently, Broken Memories is my largest foray into the world of Haxe. I also have... <span style="text-decoration: underline dotted;" title="I have barely any experience with Roblox Lua.&#013;&#010;Definitely not enough to make a full-fledged game or anything.">a little bit of experience with Roblox Lua</span>... or something like that...</p>
+                <br>
+                <p>oh yeah also godot ive got some experience with that. nothing crazy but its noteworthy anyways.</p>
             </div>
-            <div class="main-box" style="width: 70%; margin-left: auto; margin-right: -10px;">
-                <h1>third box :[</h1>
+            <div class="main-box" style="width: 72%; margin-left: auto; margin-right: -10px; contain: layout;">
+                <h1>Likes and Dislikes</h1>
                 <hr>
-                <p>oughhhhhhhhhhhhhhhhhhhhhhhhhh grahhhhhhhhhhhhhh</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+                <div class="block-left">
+                    <p style="font-size: 20px;">Likes :3</p>
+                    <p class="subtitle" style="margin-top: -15px;">In no particular order</p>
+                    <ul>
+                        <li>I like a wide variety of games, from first person shooters to sandbox games. Examples of some of my favorites being both Hollow Knights, ULTRAKILL, Minecraft, Vintage Story, various Roblox games, Celeste, a lot of Sonic games, <span style="text-decoration: underline dotted;" title="Haven't actually played any of the main games, just the free ones.">FNAF</span>, the list goes on. I've played many a game in my time.</li>
+                        <li>I don't watch much when it comes to television and stuff but I'm a pretty big fan of some of the stuff Marvel puts out (definitely more than some of the other stuff they put out). Not as big a fan of Disney itself though. Other than that I kinda just watch YouTube most of the time. Currently a good chunk of that is bodycam footage, art videos, and gaming videos.</li>
+                        <li>Pretty big fan of various forms of music. Alternative rock (and some other rock types), some kinds of pop, and probably some other genres I don't really properly know the names of. Currently in terms of actual artists I've been listening to a lot of Jamie Paige, FLAVOR FOLEY, Paramore, Muse, Sleep Token, and Churgney Gurgney (specifically Sinister Minds).</li>
+                        <li>Despite sitting at my desk all day on a computer I actually quite like nature. Big fan of birds. Birds are cool. I also like to just take pictures of landscapes and flora and stuff. Despite not being able to swim, I love aquatic life. Fish are pretty cool y'know? Cephalopods and medusozoans are also pretty cool. I'm not sure what it is about oceans but I'm fascinated with them. Just not fascinated with being <i>in</i> them. Also a fan of cats if it wasn't evident by the kinds of characters I create (they're basically all feline-adjacent).</li>
+                        <li>Food. I love food. Not to a point where it would be concerning (quite the opposite really, I'm pretty underweight as of the time of writing this) but enough for me to basically be snacking throughout the entire day. Various kinds of cereal, turkey burritos, pizza, burgers, various snack mixes, all that kinda stuff.</li>
+                    </ul>
+                </div>
+                <div class="block-right">
+                    <p style="font-size: 20px;">Dislikes :[</p>
+                    <p class="subtitle" style="margin-top: -15px;">In no particular order</p>
+                    <ul>
+                        <li>Cucumbers.</li>
+                        <li>I dislike some pretty generic things. Xenophobes, people who are anti-LGBTQ (gee i wonder why), content made by problematic people or people who are generally just kinda messed up (things like Harry Potter, Forsaken, that kinda stuff), GenAI, uber-conservatives (the American ones, I don't have enough experience with any others). <br> Not a huge fan of people who don't respect boundaries either.</li>
+                        <li>
+                            I KNOW THIS IS PROBABLY SUPER CONTROVERSIAL BUT <br> im like&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super <span class="redacted">████</span>ing terrified of dogs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;like full-on panic attack if im too close to one for along period of time
+                            <details>
+                                <summary>rant time</summary>
+                                <p class="dislikes-rant">ok so like i was at disneyland with my mom this one time right <br> got on the lil fire engine to go for a ride <br> someone else got on and they had a dog <br><br> the dog was just laying on my foot the whole time <br> thought i was gonna have a heart attack ough <img src="assets/emojis/emoji_graydead.png" class="custom-emoji"></p>
+                            </details>
+                        </li>
+                        <li>Mexican food (specifically the greasy kind), and Asian food. Makes me feel kinda nauseous afterwards.</li>
+                        <li>Sudden loud noises or noises like mixers and blenders. Those kinda sounds cause my anxiety to start deciding it feels like being present at that moment. For sudden loud noises I can understand it but mixers and blenders are more confusing to me.</li>
+                        <li>Anything competitive. It's way too stressful for me.</li>
+                    </ul>
+                </div>
+                <div class="block-center">
+                    <p class="subtitle">Depending on when you're reading this and when I've last updated the site there's a chance some of this may be outdated.</p>
+                    <p style="font-size:20px;">Fun Facts!</h1>
+                    <ul>
+                        <li style="margin-bottom:5px;"">My memory isn't all that great. Definitely not horrible, but I do struggle a bit with short-term memory.</li>
+                        <ul>
+                            <li>My long-term memory on the other hand is pretty good. I can hold a grudge for a while. I <i>will</i> remember if you do something I find to be harmful towards me in some way, shape, or form.</li>
+                        </ul>
+                        <li>I've yet to break a bone. Thought I did back in elementary school but it was just a painful injury. There was that other time I ended up tripping and falling down a sloped pathway and received numerous scrapes and cuts but that actually didn't hurt all too much. Didn't even really realize I was injured until I got to school and noticed I was bleeding.</li>
+                        <li>I originally made a furry roblox avatar to scare kids on Roblox since many of then are vehemently anti-furry, then realized "oh hey i kinda like being a furry" and fully embraced it. Being so heavily involved with the EXE community probably also had a part in becoming a furry what with me adopting my EXE as a main sona for a while.</li>
+                    </ul>
+                </div>
             </div>
             <div class="buffer"></div>
             <div class="cool-container" style="background-image:url('assets/misc/temp_gray_pic.png');min-height:1900px;">
@@ -61,7 +138,35 @@
 </html>
 
 <audio id="gray_noises" src="assets/misc/click-sounds/gray_dialogue.mp3" preload="auto"></audio>
-<audio id="spooky_scary" src="assets/misc/click-sounds/100_clicks.mp3" preload="auto"></audio>
-<audio id="scary_spooky" src="assets/misc/click-sounds/unspookify.mp3" preload="auto"></audio>
 
 <script src="js/index.js"></script>
+<script src="js/confetti.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+        const d = new Date();
+        let month = d.getMonth();
+        let date = d.getDate();
+
+        if (month == 0 && date == 1) {
+            document.getElementById("age").textContent = d.getFullYear() - 2009;
+            document.getElementById("confetti").remove();
+        } else if (month == 0 && date == 2) {
+            document.getElementById("age").textContent = d.getFullYear() - 2008;
+            document.getElementById("birthday").style.textShadow = `
+            0 0 1px #fff,
+            0 0 2px #fff,
+            0 0 5px #fff,
+            0 0 7px #e9d,
+            0 0 9px #e9d,
+            0 0 11px #e9d,
+            0 0 13px #e9d,
+            0 0 15px #e9d
+            `
+            document.getElementById("confetti").style.opacity = 1;
+        document.getElementById("birthday").style.backgroundColor = "rgba(180, 180, 180, 0.75)";
+        } else {
+            document.getElementById("age").textContent = d.getFullYear() - 2008;
+            document.getElementById("confetti").remove();
+        }
+    })
+</script>
