@@ -31,10 +31,11 @@ body {background-image: url("../assets/misc/background_tile.png"); background-co
     border-top: none;
     border-right: none;
     display: block;
+    margin: 0px auto;
     margin-top: 15px;
     margin-bottom: 15px;
 
-    width: 97%;
+    width: 98.5%;
 }
 
 hr {backdrop-filter: blur(8px); border-color: rgba(199, 199, 199, 0.25);}

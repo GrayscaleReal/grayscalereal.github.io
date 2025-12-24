@@ -11,6 +11,8 @@
     background-color: #393939;
     min-height: 176px;
     width: 103%;
+
+    z-index: -1;
 }
 
 .cool-container {
@@ -19,6 +21,8 @@
     background-color: #212121;
     background-attachment: fixed;
     width: 103%;
+
+    z-index: -1;
 }
 
 .ib-dance {
@@ -26,7 +30,6 @@
     bottom: -25px;
     left: -25px;
     width: 15%;
-    z-index: 2;
 
     filter: drop-shadow(0px 0px 15px #fff);
     pointer-events: none;
@@ -117,6 +120,14 @@ summary {
     cursor: grab;
 }
 
+.gray-box a, .dissy-icon {
+    color: rgb(131, 131, 131);
+}
+.gray-box a:hover, .dissy-icon:hover {
+    color: rgb(180, 180, 180);
+    cursor: pointer;
+}
+
 .id-left {margin-left: -10px; margin-right: auto;}
 .id-right {margin-right: -10px; margin-left: auto;}
 .id-left:hover, .id-right:hover {transform: scale(1.025); background-color: rgba(255, 255, 255, 0.25);}
@@ -127,6 +138,10 @@ summary {
     display: inline-block;
     text-align: center;
     margin-bottom: 5px;
+    font-size: 15px;
+    min-height: 60px;
+    max-height: 60px;
+    overflow: scroll;
 
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(8px);
@@ -137,6 +152,8 @@ summary {
     border-right: none;
 
     transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+    scrollbar-width: none;
 }
 
 .click-counter b {color: rgb(220, 220, 220);}
@@ -202,7 +219,7 @@ summary {
     border-right: none;
 }
 
-.gooby h1 {animation: gooby-bounce 3.6s cubic-bezier(0.175, 0.885, 0.320, 1.275) infinite both;}
+.gooby h1, .gooby p {animation: gooby-bounce 3.6s cubic-bezier(0.175, 0.885, 0.320, 1.275) infinite both;}
 
 @keyframes gooby-bounce {
     0% {transform: scale3d(1, 1, 1);}
