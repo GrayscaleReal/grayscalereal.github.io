@@ -55,6 +55,57 @@ _::-webkit-full-page-media, _:future, :root .landscape {
     font-size: 16px;
     font-weight: lighter;
 }
+.pf-audio-card {
+    border: 1.5px solid rgba(199, 199, 199, 0.5);
+    border-top: none;
+    border-right: none;
+    border-radius: 25px;
+    background-image: linear-gradient(to top, rgba(24, 24, 24, 100%) 25%, rgba(145, 145, 145, 0.1) 100%);
+    backdrop-filter: blur(8px);
+
+    min-height: 13vw;
+    max-height: 13vw;
+    min-width: 21vw;
+    max-width: 21vw;
+    
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: center;
+
+    padding: 15px;
+
+    transition: transform 0.15s ease-out;
+}
+.pf-audio-para {
+    padding: 1%;
+    background-color: rgba(199, 199, 199, 0.15);
+    backdrop-filter: blur(8px);
+    max-height: 30%;
+    min-height: 30%;
+    margin-top: 5%;
+
+    overflow-y: scroll;
+    scrollbar-width: none;
+
+    border: 1.5px solid rgba(199, 199, 199, 0.5);
+    border-top: none;
+    border-right: none;
+    border-radius: 25px;
+}
+.pf-audio-para p {
+    font-size: 16px;
+    font-weight: lighter;
+}
+.pf-audio-card audio {
+    margin-top: 10px;
+    width: 92%;
+}
+.audio-icon {
+    position: absolute;
+    top: 5%;
+    left: 2.5%;
+}
 
 .portfolio-box {
     display: grid;
