@@ -1,0 +1,62 @@
+.portfolio-card {
+    border: 1.5px solid rgba(199, 199, 199, 0.5);
+    border-top: none;
+    border-right: none;
+    border-radius: 25px;
+    background-image: linear-gradient(to top, rgba(24, 24, 24, 100%) 25%, rgba(145, 145, 145, 0.1) 100%);
+    backdrop-filter: blur(8px);
+
+    min-height: 26vw;
+    max-height: 26vw;
+    min-width: 21vw;
+    max-width: 21vw;
+    
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: center;
+
+    padding: 15px;
+
+    transition: transform 0.15s ease-out;
+}
+.portfolio-card:hover {transform: scale(1.025);}
+.portfolio-card img {border-radius: 25px; overflow-x: scroll;}
+.square {width: 100%;}
+.landscape, .portrait {height: 100%}
+.pf-image-container {
+    width: 100%;
+    height: 83%;
+    border-radius: 25px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-color: rgba(133, 133, 133, 0.5) transparent;
+}
+.portfolio-paragraph {
+    padding: 1%;
+    background-color: rgba(199, 199, 199, 0.15);
+    backdrop-filter: blur(8px);
+    max-height: 15%;
+
+    overflow-y: scroll;
+    scrollbar-width: none;
+
+    border: 1.5px solid rgba(199, 199, 199, 0.5);
+    border-top: none;
+    border-right: none;
+    border-radius: 25px;
+}
+
+.portfolio-paragraph p {font-size: 100%;}
+
+.portfolio-box {
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: auto auto auto auto;
+
+    max-height: 800px;
+    
+    overflow-y: scroll;
+    scrollbar-color: rgba(133, 133, 133, 0.5) transparent;
+}

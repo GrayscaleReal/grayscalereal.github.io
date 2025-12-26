@@ -20,11 +20,11 @@
 .main-header p {padding-left: 0.5%;}
 .content {margin-top: 75px; margin-right: 10px;}
 body {background-image: url("../assets/misc/background_tile.png"); background-color: #212121; background-attachment: fixed; overflow-x: hidden;}
+.lighter-header {color: gray}
 
 .main-box {
     background-color: rgba(145, 145, 145, 0.1);
     background-attachment: fixed;
-    padding: 1%;
     border-radius: 25px;
     backdrop-filter: blur(8px);
     border: 1.5px solid rgba(199, 199, 199, 0.5);
@@ -34,9 +34,11 @@ body {background-image: url("../assets/misc/background_tile.png"); background-co
     margin: 0px auto;
     margin-top: 15px;
     margin-bottom: 15px;
+    padding: 1%;
 
     width: 98.5%;
 }
+.main-box h1 {letter-spacing: 2px;}
 
 hr {backdrop-filter: blur(8px); border-color: rgba(199, 199, 199, 0.25);}
 
@@ -67,3 +69,12 @@ a.header:hover {text-decoration: underline;}
     height: 1rem;
     display: inline-block;
 }
+
+.more-info {
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+.subtitle {font-size: 12px; opacity: 0.5;}
+.pride-flag {display: inline-block; border-radius: 2.5px;}
+.redacted {letter-spacing: -1px;}
