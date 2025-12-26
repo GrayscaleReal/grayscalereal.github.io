@@ -23,7 +23,8 @@
 .portfolio-card:hover {transform: scale(1.025);}
 .portfolio-card img {border-radius: 25px; overflow-x: scroll;}
 .square {width: 100%;}
-.landscape, .portrait {height: 100%}
+.landscape {height: 100%}
+.portrait {height: 97%;}
 .pf-image-container {
     width: 100%;
     height: 83%;
@@ -47,8 +48,10 @@
     border-right: none;
     border-radius: 25px;
 }
-
-.portfolio-paragraph p {font-size: 100%;}
+.portfolio-paragraph p {
+    font-size: 16px;
+    font-weight: lighter;
+}
 
 .portfolio-box {
     display: grid;
@@ -59,4 +62,56 @@
     
     overflow-y: scroll;
     scrollbar-color: rgba(133, 133, 133, 0.5) transparent;
+}
+
+.censored {filter: blur(32px); transition: filter 0.15s ease-in-out;}
+.censored:hover {filter: none;}
+
+.censored-icon {
+    position: relative;
+    font-size: 60px;
+    top: -50%;
+
+    z-index: 3;
+    transition: opacity 0.15s ease-in-out;
+    color: whitesmoke;
+}
+
+.censored:hover + .censored-icon {opacity: 0;}
+
+.toc {
+    max-width: 0px;
+    border-left: 10px solid gray;
+    border-right: 5px solid gray;
+    border-radius: 10px;
+    overflow-x: hidden;
+    background-color: rgba(133, 133, 133, 0.5);
+    backdrop-filter: blur(8px);
+
+    transition: all 0.35s ease-in-out;
+    white-space: nowrap;
+    
+    position: fixed;
+    z-index: 20;
+    top: 195px;
+
+    opacity: 0.5;
+}
+
+.toc:hover {
+    max-width: 150px;
+    padding-left: 15px;
+    padding-right: 25px;
+    border-right: 5px solid whitesmoke;
+    letter-spacing: 4px;
+    opacity: 1;
+}
+
+.toc p {font-size: 24px;}
+.toc a {color: whitesmoke;}
+.toc i {font-size: 18px;}
+
+.main-box {
+    width: 97%;
+    margin-right: -10px;
 }

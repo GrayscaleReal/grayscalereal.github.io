@@ -30,28 +30,6 @@
     pointer-events: none;
 }
 
-summary:hover {background-color: rgba(255, 255, 255, 0.25);}
-details > summary {list-style-type: '▷ ';}
-details[open] > summary {list-style-type: '▽ ';}
-
-summary {
-    color: whitesmoke;
-    padding: 2.5px;
-    margin: 0px auto;
-    margin-top: 5px;
-
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(8px);
-
-    border: 1.5px solid rgba(199, 199, 199, 0.5);
-    border-radius: 25px;
-    border-top: none;
-    border-right: none;
-
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out;
-}
-
 /* GRAY BOX CODE */
 .gray-box-header:active {cursor: grabbing;}
 .gray-box {text-align: center;}
