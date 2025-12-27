@@ -55,6 +55,11 @@ h1 {
     color: whitesmoke;
     font-size: 24px;
 }
+h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: whitesmoke;
+    font-size: 24px;
+}
 
 a:visited {color: rgb(131, 131, 131);}
 a:active {color: white;}

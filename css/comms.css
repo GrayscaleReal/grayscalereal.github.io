@@ -1,0 +1,22 @@
+span[id^="comm_status_"] {
+    text-transform: uppercase;
+}
+
+.left-comm-div, .right-comm-div {
+    background-color: rgba(145, 145, 145, 0.1);
+    background-attachment: fixed;
+    backdrop-filter: blur(8px);
+
+    border-radius: 25px;
+    border: 1.5px solid rgba(199, 199, 199, 0.5);
+    border-top: none;
+    border-right: none;
+    
+    display: block;
+    
+    padding: 1%;
+}
+.left-comm-div {float: left; width: 22%;}
+.right-comm-div {float: right; width: 73%;}
+.left-comm-div h1, .right-comm-div h1 {letter-spacing: 2px;}
+h1 {font-size: 28px;}
