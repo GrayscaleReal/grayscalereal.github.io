@@ -16,7 +16,8 @@ span[id^="comm_status_"] {
     
     padding: 1%;
 }
-.left-comm-div {float: left; width: 22%;}
-.right-comm-div {float: right; width: 73%;}
+.left-comm-div {float: left; width: 100%; margin-bottom: 3%;}
+.left-comm-div p, .left-comm-div h1, .left-comm-div h2 {padding-left: 2%; padding-right: 2%;}
+.right-comm-div {float: right; width: 73%; margin-right: -0.5%}
 .left-comm-div h1, .right-comm-div h1 {letter-spacing: 2px;}
 h1 {font-size: 28px;}
