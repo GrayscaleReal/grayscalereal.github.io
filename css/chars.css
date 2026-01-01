@@ -7,7 +7,7 @@
     pointer-events: none;
 }
 .char-section {
-    transition: transform 0.15s ease-in-out, filter 0.15s ease-in-out;
+    transition: transform 0.15s ease-in-out, filter 0.075s ease-in-out;
     margin-bottom: 10px;
 }
 .char-section:hover {transform: scale(1.025); cursor: pointer;}
@@ -28,6 +28,7 @@
     float: left;
     display: block;
     margin-right: 16px;
+    margin-bottom: 4.5px;
 
     border-radius: 15px;
     border: 1.5px solid rgba(199, 199, 199, 0.5);

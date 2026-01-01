@@ -271,7 +271,7 @@
                             'ref_inkblot',
                             'Inkblot',
                             'They/It',
-                            'Exalted',
+                            'EXALTED',
                             'N/A',
                             '9\'3',
                             `
@@ -288,7 +288,7 @@
                             '',
                             'Splotch',
                             'She/They',
-                            'Exalted',
+                            'EXALTED',
                             'N/A',
                             '1\'2',
                             `
@@ -488,7 +488,7 @@
                         <div class="char-section" onclick="switchDivContent(
                             '',
                             'Vera & Seraph',
-                            'She/Her & It/Its',
+                            'She/Her (Vera) & It/Its (Seraph)',
                             'Inken Feline & Unknown Entity',
                             'N/A',
                             '3\'1 (Vera) & [UNRECORDED] (Seraph)',
@@ -527,7 +527,7 @@
                             'ref_courier',
                             'Courier',
                             'They/Them',
-                            `<span class='redacted'>███████████</span>`,
+                            `<span class='redacted' style='font-size: 12px;'>███████████</span>`,
                             'N/A',
                             '3\'6',
                             `FILE REMOVED.`
@@ -550,7 +550,7 @@
                             <p style="font-size: 13.5px">Delta & Amber</p>
                             <p class="sub-subtitle">Art Fight OCs</p>
                         </div>
-                        <!-- KURUSHIMI -->
+                        <!-- KURUSHIMI // FINSIHED -->
                         <div class="char-section" onclick="switchDivContent(
                             'ref_kuru',
                             'Kurushimi (Kuru)',
@@ -558,7 +558,13 @@
                             'Absol (Mega Z Variant)',
                             'N/A',
                             '6\'3',
-                            `Content missing.`
+                            `
+                            <p>Kurushimi is an Absol permanently stuck in a mega state. The source of her predicament is a Mega Stone mysteriously embedded into her eye socket. The constant energy required to maintain her form leaves her somewhat tired and constantly inching towards fainting, so she learned Recover to avoid potentially spontaneously dying if she stays up for too long or overexert themselves. She can be bipedal or quadruped, but prefer being bipedal.</p>
+                            <p>She doesn't remember much of how she came to have the Absolite Z embedded into her, but periodically recall bits and pieces about it. The only thing she does remember from before she was irreversibly altered is the scarf someone close to her gifted her. The scarf goes everywhere with her.</p>
+                            <p>The only people she lets call her Kuru are those she either tolerates or is friends with (both fairly uncommon). For anyone else who tries to call her that, they typically earn themselves a glare or a mostly harmless warning bite.</p>
+                            <p>So I was spitballing some ideas for an OC in a Discord VC while waiting for someone to come back from whatever it was they were doing, and had the idea to have a permanently mega Pokemon as a result of a stone being embedded somewhere, and figured that an eye would be a fun subversion of the typical placement. I then thought about Mega Absol (technically Mega Z but both of them fit the bill) and how one of their eyes is covered by their hair. Boom. Perfect candidate. <span style='font-size:8px'>I also just like Mega Absol Z</span></p>
+                            <p>As for their moves, I'm fully aware that they'd be pretty damn useless in an actual fight against a formidable foe, but I felt that when bringing their personality and Absol-Z's Pokedex entry into account it fits pretty well. Plus, in all honesty, they'd probably have access to more moves like is sometimes shown in the anime or some other media.</p>
+                            `
                         )">
                             <img src="../assets/chars/char_pfps/placeholder_pfp.png" class="photo-button">
                             <p>Kurushimi</p>
@@ -578,15 +584,21 @@
                             <p>Lux</p>
                             <p class="sub-subtitle">Hollow Knight OC</p>
                         </div>
-                        <!-- PLACEHOLDER -->
+                        <!-- PLACEHOLDER // FINISHED -->
                         <div class="char-section" onclick="switchDivContent(
                             '',
                             'Placeholder',
                             'They/Them',
-                            'Unknown',
+                            'Variable',
                             'N/A',
-                            '3\'5',
-                            `Content missing.`
+                            'Variable (3\'5 in their default form)',
+                            `
+                            <p>Placeholder isn't a character belonging to any world in particular. They're usually used as an example of how things function, and their form also changes to better suit the world they find themselves in, but will always be generic in terms of anatomy. For example, in a Pokemon universe, their form would be that of a humanoid pokemon like a Lucario.</p>
+                            <p>Regardless of which universe they find themselves in, some aspects of their appearance will remain the same. Their coloration will always remain as an unmoving checkerboard pattern consisting of the colors &quot;#9b79a9&quot; and &quot;#846a8f&quot;. Additionally, they retain their plus-shaped face and their top scars.</p>
+                            <p>They were initially created when I was showing off one of Gayscale's &quot;habits&quot; for lack of a better term, being the marking of targets they've let go. The markings were similar to top scars for reasons I've forgotten. While in most cases they're able to &quot;reset&quot; their form at will, healing any injuries or ailments in the process, the scars remain.</p>
+                            <p>They're a godlike entity in one sense, due to being functionally immortal as a result of being able to regenerate and being able to revive themselves, however they don't have any other abilities besides that, and are about as good as the average person in a fight.</p>
+                            <p class='subtitle'>No, this section isn't just missing an image, that is genuinely what they look like. They just also happen to be a placeholder image.</p>
+                            `
                         )">
                             <img src="../assets/chars/char_pfps/placeholder_pfp.png" class="photo-button">
                             <p>Placeholder</p>
@@ -612,8 +624,13 @@
     </body>
 </html>
 
+<audio id="clicky">
+    <source src="../assets/audio/clicky.wav">
+</audio>
+
 <script>
-    document.getElementById("def_char").click()
+    document.getElementById("def_char").click();
+    const clickySound = document.getElementById("clicky");
 
     function switchDivContent(newPic, newName, newPrns, newSpecs, newAffil, newHeight, newDesc) {
         if (newPic != "" && newPic != "missing") {
@@ -622,10 +639,13 @@
             document.getElementById("char_img").src = "../assets/chars/char_pfps/placeholder_pfp.png";
         }
         document.getElementById("char_name").innerHTML = newName;
-        document.getElementById("char_pronouns").innerHTML = newPrns;
+        document.getElementById("char_pronouns").innerHTML = "Pronouns: " + newPrns;
         document.getElementById("char_species").innerHTML = "Species: " + newSpecs;
         document.getElementById("char_affiliation").innerHTML = "Affiliation: " + newAffil;
         document.getElementById("char_height").innerHTML = "Height: " + newHeight;
         document.getElementById("char_desc").innerHTML = newDesc;
+
+        clickySound.currentTime = 0;
+        clickySound.play();
     }
 </script>
