@@ -1,0 +1,38 @@
+.photo-button {
+    border-radius: 15px;
+    border: 1.5px solid rgba(199, 199, 199, 0.5);
+    border-top: none;
+    border-right: none;
+
+    pointer-events: none;
+}
+.char-section {
+    transition: transform 0.15s ease-in-out, filter 0.15s ease-in-out;
+    margin-bottom: 10px;
+}
+.char-section:hover {transform: scale(1.025); cursor: pointer;}
+.char-section:active {transform: scale(0.95); filter: saturate(150%) contrast(105%);}
+.shitbox {
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+}
+.shitbox img {width:150px;}
+.shitbox img:not(.photo-button) {filter: saturate(500%) brightness(25%); opacity: 0.5; border-radius: 15px;}
+
+#char_name {font-size: 36px;}
+.char-subtitle {font-size: 12px; color: rgb(128, 128, 128); margin-top: -10px;}
+.sub-subtitle {font-size: 10px; color: rgb(128, 128, 128);}
+#char_img {
+    width: 512px;
+    float: left;
+    display: block;
+    margin-right: 16px;
+
+    border-radius: 15px;
+    border: 1.5px solid rgba(199, 199, 199, 0.5);
+    border-top: none;
+    border-right: none;
+}
+.char-section p {text-align: center; margin-top: 0px; margin-bottom: 0px; font-family: 'OpenDyslexic'}
+.mini-box {border-radius: 15px; max-height: 250px; overflow-y: scroll; scrollbar-color: rgba(133, 133, 133, 0.5) transparent;}
