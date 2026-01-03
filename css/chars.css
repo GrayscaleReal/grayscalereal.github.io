@@ -50,9 +50,10 @@
     justify-content: center;
 }
 .gallery-card {text-align: center; padding: 0.5%; height: 300px; margin-right: 1%; margin-left: 1%; display: inline-block; vertical-align: top;}
-.gallery-card img {height: 300px; margin-bottom: 15px; text-align: center;}
+.gallery-card img {height: 300px; max-height: 300px; margin-bottom: 15px; text-align: center;}
 .gallery-card p {text-align: center; width: 0; min-width: 100%;}
 
 _::-webkit-full-page-media, _:future, :root .gallery-card img {
     height: 100px;
+    max-height: 100px;
 }
