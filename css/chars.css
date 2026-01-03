@@ -7,7 +7,7 @@
     pointer-events: none;
 }
 .char-section {
-    transition: transform 0.15s ease-in-out, filter 0.075s ease-in-out;
+    transition: transform 0.15s cubic-bezier(.02,.19,.4,.99), filter 0.075s ease-in-out;
     margin-bottom: 10px;
 }
 .char-section:hover {transform: scale(1.025); cursor: pointer;}
@@ -35,6 +35,20 @@
     border-top: none;
     border-right: none;
 }
-.char-section p {text-align: center; margin-top: 0px; margin-bottom: 0px; font-family: 'OpenDyslexic'}
+.char-section p {text-align: center; margin-top: 0px; margin-bottom: 0px; font-family: 'OpenDyslexic', 'Lucida Handwriting'}
 .mini-box {border-radius: 15px; max-height: 250px; overflow-y: scroll; scrollbar-color: rgba(133, 133, 133, 0.5) transparent;}
 .unclick {pointer-events: none; opacity: 0.5; filter: brightness(50%);}
+
+.char-gallery {
+    max-height: 350px;
+    min-height: 350px;
+    width: 100%;
+    display: inline-block;
+    overflow-y: scroll;
+    scrollbar-color: rgba(133, 133, 133, 0.5) transparent;
+    margin-top: 25px;
+    justify-content: center;
+}
+.gallery-card {text-align: center; padding: 0.5%; height: 300px; margin-right: 1%; margin-left: 1%; display: inline-block; vertical-align: top;}
+.gallery-card img {height: 100%; margin-bottom: 15px; text-align: center;}
+.gallery-card p {text-align: center; width: 0; min-width: 100%;}
