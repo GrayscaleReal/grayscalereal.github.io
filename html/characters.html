@@ -341,7 +341,7 @@
 ################
 -->
                         <!-- GRAY -->
-                        <div id="def_char" class="char-section" onclick="switchDivContent(
+                        <div class="char-section" onclick="switchDivContent(
                             'ref_gray',
                             'Gray',
                             'They/It',
@@ -503,13 +503,16 @@
                         <!-- ZERO -->
                         <div class="char-section" onclick="switchDivContent(
                             'ref_inken-feline',
-                            'Zero',
+                            'Zero*',
                             'They/Them',
                             'Inken Feline',
                             'N/A',
-                            '3\'6 (Vera)',
+                            '3\'6',
                             `
-                                <p>*Okay so like technically the ref is just for Inken Felines as a whole but Zero is used as the example for said Inken Felines so it's kinda also technically a Zero ref.</p>
+                                <p class='subtitle'>*Okay so like technically the ref is just for Inken Felines as a whole but Zero is used as the example for said Inken Felines so it's kinda also technically a Zero ref.</p>
+                                <p>Zero is a generic Inken Feline. They don't have anything particularly noteworthy about them. No abilities, tragic backstory, nothing like that. They were born and raised in Moonstone Point, specifically its Quartz District, and eventually founded an animatronic diner in MP's Opal District. The diner is fairly popular for those living in the Ruby District due to its affordability and entertainment value.</p>
+                                <p>They're fairly decent friends with Atlas, with the two having run into each other during one of Atlas' research trips. Atlas somewhat frequently returns to the diner, usually to pick up some food to take back home. They're also friends with Specter, with Specter fixing up the diner's tech in exchange for free food sometimes.</p>
+                                <p>The new reference sheet looks so much better than the old one I'm so glad I got around to remaking that. The old one had a massive forehead and a really weird-looking face.</p>
                             `
                         )">
                             <img src="../assets/chars/char_pfps/placeholder_pfp.png" class="photo-button">
@@ -522,6 +525,14 @@
                 <p class="char-subtitle" style="text-align: center;">6 Total Characters</p>
                 <div class="main-box mini-box">
                     <div class="shitbox" style="grid-template-columns: auto auto auto auto auto;">
+
+<!--
+######################
+######################
+##### MISC CHARS #####
+######################
+######################
+-->
                         <!-- COURIER // FINISHED-->
                         <div class="char-section" onclick="switchDivContent(
                             'ref_courier',
@@ -548,7 +559,12 @@
                             'Crystalbed (Delta) & Feline (Amber)',
                             'N/A',
                             '3\'3 (Delta) & 3\'5 (Amber)',
-                            `Content missing.`
+                            `
+                            <p>Delta and Amber were both created for Art Fight 2025, the theme being Fossils VS Crystals. All I have down for their lore so far is that both of them were on an archaeology expedition led by Amber, with Delta having come along with her. Both of them went into a large cave but got split up at some point.</p>
+                            <p>Amber found plenty of fossils and cool-looking rocks, but Delta fell through a weak section of the cave into a lower chamber filled with a symbiotic species of crystals. By the time Amber realized what had happened and could get her out, Delta had already been pretty heavily infested.</p>
+                            <p>Aside from the obvious issues of no longer having a functional right eye and their hearing being a bit messed up, Delta was fairly unharmed. Plus, she got some fun new powers out of it so like. That's kinda cool.</p>
+                            <p>Both characters were color-picked from the Crystal and Fossil profile cards.</p>
+                            `
                         )">
                             <img src="../assets/chars/char_pfps/delta-amber_pfp.png" class="photo-button">
                             <p style="font-size: 13.5px">Delta & Amber</p>
@@ -640,6 +656,13 @@
 </audio>
 
 <script>
+    const charList = document.querySelectorAll(".char-section");
+    if (charList.length > 0) {
+        const randomInd = Math.floor(Math.random() * charList.length);
+        const randomChar = charList[randomInd];
+        randomChar.id = "def_char";
+    }
+
     document.getElementById("def_char").click();
     const clickySound = document.getElementById("clicky");
 
