@@ -37,3 +37,4 @@
 }
 .char-section p {text-align: center; margin-top: 0px; margin-bottom: 0px; font-family: 'OpenDyslexic'}
 .mini-box {border-radius: 15px; max-height: 250px; overflow-y: scroll; scrollbar-color: rgba(133, 133, 133, 0.5) transparent;}
+.unclick {pointer-events: none; opacity: 0.5; filter: brightness(50%);}
