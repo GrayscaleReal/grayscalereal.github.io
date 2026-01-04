@@ -21,6 +21,7 @@
 .shitbox img:not(.photo-button) {filter: saturate(500%) brightness(25%); opacity: 0.5; border-radius: 15px;}
 .main-box .main-box {
     background-image: url("../assets/misc/background_tile.png");
+    backdrop-filter: none;
 }
 
 #char_name {font-size: 36px;}
