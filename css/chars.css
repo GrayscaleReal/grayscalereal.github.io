@@ -40,7 +40,7 @@
     border-right: none;
 }
 .char-section p {text-align: center; margin-top: 0px; margin-bottom: 0px; font-family: 'OpenDyslexic', 'Lucida Handwriting'}
-.mini-box {border-radius: 15px; max-height: 250px; overflow-y: scroll; scrollbar-color: rgba(133, 133, 133, 0.5) transparent;}
+.mini-box {border-radius: 15px; max-height: 250px; overflow-y: scroll; scrollbar-color: rgba(133, 133, 133, 0.5) transparent; width: 97.5%;}
 .unclick {pointer-events: none; opacity: 0.5; filter: brightness(50%);}
 
 .char-gallery {
@@ -52,6 +52,7 @@
     scrollbar-color: rgba(133, 133, 133, 0.5) transparent;
     margin-top: 15px;
     margin-bottom: -15px;
+    padding-bottom: 15px;
     justify-content: center;
 
     background-image: url("../assets/misc/background_tile.png");
@@ -61,9 +62,13 @@
     border-top: none;
     border-right: none;
 }
-.gallery-card {text-align: center; padding: 0.5%; height: 300px; margin-right: 1%; margin-left: 1%; display: inline-block; vertical-align: top;}
+.gallery-card {text-align: center; padding: 0.5%; height: 300px; margin: 1%; display: inline-block; vertical-align: top;}
 .gallery-card img {height: 300px; max-height: 300px; margin-bottom: 15px; text-align: center;}
 .gallery-card p {text-align: center; width: 0; min-width: 100%;}
+.trans {
+    filter: drop-shadow(0px 0px 5px rgba(141, 141, 141, 0.532));
+    border-radius: 15px;
+}
 
 _::-webkit-full-page-media, _:future, :root .gallery-card img {
     height: 100px;
