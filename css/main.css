@@ -68,6 +68,7 @@ a:link {color: rgb(173, 173, 173);}
 a:hover {color:white;}
 a.header {text-decoration: none; color: whitesmoke;}
 a.header:hover {text-decoration: underline;}
+a.deadlink {text-decoration: line-through; color: gray; pointer-events: none;}
 
 .custom-emoji {
     position: relative;
